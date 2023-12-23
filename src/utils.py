@@ -57,3 +57,10 @@ def count_payment(transfer):
     currency = transfer['operationAmount']['currency']['name']
     return payment, currency
 
+
+def get_description(transfer):
+    """
+    Вывод описания операции
+    """
+    return transfer['description']
+
