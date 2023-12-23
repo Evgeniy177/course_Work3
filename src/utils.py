@@ -24,3 +24,10 @@ def sort_list(data, amount=5):
         new_list = sorted(new_list, key=lambda operation: operation['date'], reverse=True)
     return new_list[:amount]
 
+
+def format_date(data):
+    """
+    Форматирование даты
+    """
+    date_o = datetime.strptime(data["date"], "%Y-%m-%dT%H:%M:%S.%f")
+    return date_o.strftime("%d.%m.%Y")
