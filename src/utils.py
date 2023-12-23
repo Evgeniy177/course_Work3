@@ -14,7 +14,7 @@ def load_file(file_path):
 
 def sort_list(data, amount=5):
     """
-        Создаёт новый EXECUTED список
+        Создаёт новый EXECUTED список и сортирует его по убыванию
     """
     new_list = []
     for element in data:
@@ -47,3 +47,13 @@ def get_requisites(data):
         formatted_data = '**' + list_of_data[-1][-4:]
         list_of_data.pop(-1)
         return ' '.join(list_of_data), formatted_data
+
+
+def count_payment(transfer):
+    """
+    Форматирование операции
+    """
+    payment = transfer['operationAmount']['amount']
+    currency = transfer['operationAmount']['currency']['name']
+    return payment, currency
+
